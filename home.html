@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FASKENS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        #website .change {
+            color: #f9d342;
+            animation: none;
+            font-weight: 900;
+            transition: none;
+        }
+        @keyframes changeText {}
+    </style>
+</head>
+<body id="home">
+    <header>
+        <img src="images/faskens logo.jpg" alt="faskens-logo" class="faskens-logo"/>
+        <nav>
+            <ul>
+                <li><a href="#home" target="_blank">Home</a></li>
+                <li><a href="#trading" target="_blank">Trading</a></li>
+                <li><a href="#website" target="_blank">Websites</a></li>
+                <li><a href="#contact" target="_blank">Contacts</a></li>
+                <li><a href="#about" target="_blank">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section style="position:relative;" class="hero-section">
+            <div class="hero-content">
+                <h1 class="main-title">FASKENS opens for business</h1>
+                <a href="#about" class="learn-more" target="_blank">Learn More</a>
+            </div>
+            <img src="images/open.jpg" alt="Faskens" id="learn-img" class="section-full-img"/>
+        </section>
+        
+        <section id="website">
+            <h2>Let's <span class="change">Create</span> your website</h2>
+            <h3>We are a web development company</h3>
+            <p>We create any type of website: 
+                <div class="rotate">
+                    <div class="rotate-inner">
+                        <div>Investment sites</div>
+                        <div>Blogs</div>
+                        <div>Educational website</div>
+                        <div>Personal website</div>
+                        <div>Portfolio website</div>
+                        <div>E-commerce</div>
+                        <div>Shipping sites</div>
+                        <div>business websites</div>
+                        <!-- duplicate for infinite effect -->
+                        <div>Investment sites</div>
+                        <div>Blogs</div>
+                        <div>Educational website</div>
+                        <div>Personal website</div>
+                        <div>Portfolio website</div>
+                        <div>E-commerce</div>
+                        <div>Shipping sites</div>
+                        <div>business websites</div>
+                    </div>
+                </div>
+            </p>
+            <p>We are a team of experienced web developers and designers, who can help you create a website that meets your needs and exceeds your expectations.</p>
+            <div class="contact-whatsapp">
+                <a href="https://wa.me/qr/SWFMP7FWLK35L1" class="whatsapp" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+        <section id="trading" class="trading-section">
+            <h2>Get in touch with our trading <a href="https://wa.me/qr/SWFMP7FWLK35L1" target="_blank">agent</a></h2>
+            <div class="trading-images">
+                <img src="images/finance.webp" alt="faskens-trading" class="trading-img"/>
+                <img src="images/trade-agent.jpeg" alt="faskens-trading" class="trading-img"/>
+            </div>
+            <div id="trading-display" class="ticker-tape-container">
+                <!-- TradingView Ticker Tape Widget -->
+                <div class="tradingview-widget-container">
+                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                  {
+                  "symbols": [
+                    {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
+                    {"proName": "FX:EURUSD", "title": "EUR/USD"},
+                    {"proName": "OANDA:XAUUSD", "title": "GOLD"},
+                    {"proName": "BITSTAMP:ETHUSD", "title": "ETH/USD"},
+                    {"proName": "OANDA:WTICOUSD", "title": "OIL"},
+                    {"proName": "FX:GBPUSD", "title": "GBP/USD"}
+                  ],
+                  "colorTheme": "light",
+                  "isTransparent": false,
+                  "displayMode": "regular",
+                  "locale": "en"
+                }
+                  </script>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <h2 class="contact-info">Get in touch with us</h2>
+        <ul class="social-links">
+            <li><a href="https://wa.me/qr/SWFMP7FWLK35L1" id="whatsapp" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a href="https://facebook.com/yourusername" id="facebook" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com/faskens_view" id="twitter" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://linkedin.com/in/karl-amaechi" id="linkedIn" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://instagram.com/faskens_view" id="instagram" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <p>Copyright &copy Faskens.</p>
+    </footer>
+    <script>
+        // Animate the .change text between 'Create' and 'Design'
+        document.addEventListener('DOMContentLoaded', function() {
+          const changeSpan = document.querySelector('#website .change');
+          if (changeSpan) {
+            let state = true;
+            setInterval(() => {
+              changeSpan.textContent = state ? 'Create' : 'Design';
+              state = !state;
+            }, 2000);
+          }
+        });
+    </script>
+</body>
+</html>

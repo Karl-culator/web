@@ -1,0 +1,388 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #0a2342;
+    color: #fff;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+header img {
+    height: 48px;
+    margin-right: 24px;
+}
+header nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+header nav ul li a:hover {
+    color: #f9d342;
+}
+header > div {
+    margin-left: 32px;
+}
+header > div a {
+    color: #f9d342;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #fff2cc;
+    transition: background 0.2s;
+}
+header > div a:hover {
+    background: #f9d342;
+    color: #0a2342;
+}
+
+main {
+    padding-top: 90px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+section {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    margin: 32px 0;
+    padding: 32px 24px;
+    position: relative;
+}
+section h1, section h2, section h3 {
+    color: #0a2342;
+}
+
+/* Learn More button on image */
+#learn-img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 auto 16px auto;
+    position: relative;
+}
+.learn-more {
+    position: absolute;
+    left: 50%;
+    top: 180px;
+    transform: translateX(-50%);
+    background: #25d366;
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s;
+    z-index: 2;
+}
+.learn-more:hover {
+    background: #128c7e;
+}
+
+/* WhatsApp floating button */
+.whatsapp {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: #25d366;
+    color: #fff;
+    font-size: 2.2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    z-index: 2000;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.whatsapp::before {
+    content: none;
+}
+
+/* Social icons in footer */
+footer {
+    background: #0a2342;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    text-align: center;
+    margin-top: 48px;
+}
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+footer .social-links li a {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1a3356;
+    transition: background 0.2s, color 0.2s;
+}
+footer .social-links li a:hover {
+    background: #f9d342;
+    color: #0a2342;
+}
+
+/* Remove pseudo-element icons for social links, use only <i> tags */
+#whatsapp::before,
+#facebook::before,
+#twitter::before,
+#linkedIn::before,
+#instagram::before {
+    content: none;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Rotating banner styles */
+#website {
+    width: 98%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f9d342 0%, #25d366 50%, #0a2342 100%);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    padding: 32px 24px 40px 24px;
+    position: relative;
+}
+.rotate {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    overflow: hidden;
+    align-items: center;
+    background: #eaf6ff;
+    border-radius: 16px;
+    padding: 14px 0;
+    min-height: 64px;
+    width: 100%;
+    position: relative;
+}
+.rotate-inner {
+    display: flex;
+    animation: rotate-infinite 24s linear infinite;
+    gap: 40px;
+}
+.rotate > div, .rotate-inner > div {
+    min-width: max-content;
+    font-size: 1.5rem;
+    padding: 12px 36px;
+    background: #0a2342;
+    color: #f9d342;
+    border-radius: 24px;
+    margin: 0 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s;
+}
+.rotate > div:hover, .rotate-inner > div:hover {
+    background: #f9d342;
+    color: #0a2342;
+}
+@keyframes rotate-infinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+#website h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 18px;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+#website .change {
+    color: #f9d342;
+    animation: changeText 2s steps(1, end) infinite alternate;
+    font-weight: 900;
+    transition: color 0.5s;
+}
+@keyframes changeText {
+    0% { color: #f9d342; }
+    49% { color: #f9d342; }
+    50% { color: #25d366; }
+    100% { color: #25d366; }
+}
+#website h3 {
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: #0a2342;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+    text-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+#website p {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 24px 0 18px 0;
+    background: linear-gradient(90deg, #f9d342, #25d366, #0a2342, #f9d342, #25d366, #0a2342);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: brightness(1.1) contrast(1.2);
+    letter-spacing: 1.5px;
+    text-stroke: 2px #fff;
+    -webkit-text-stroke: 2px #fff;
+    animation: gradientText 4s linear infinite alternate;
+}
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Hero section styles */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    overflow: hidden;
+}
+.section-full-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    padding-top: 48px;
+}
+.hero-content .main-title {
+    color: #fff;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+.hero-content .learn-more {
+    margin-top: 18px;
+    display: inline-block;
+}
+
+/* Trading section styles */
+.trading-section {
+    width: 100%;
+    margin: 0 auto 32px auto;
+    padding: 0 0 24px 0;
+}
+.trading-images {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    margin: 0 auto 18px auto;
+    justify-content: center;
+    align-items: stretch;
+}
+.trading-img {
+    width: 50%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 8px;
+    }
+    main {
+        padding-top: 120px;
+    }
+    section {
+        padding: 18px 6px;
+    }
+    .learn-more {
+        top: 120px;
+        padding: 10px 18px;
+        font-size: 1rem;
+    }
+    #learn-img {
+        max-width: 100%;
+        height: 180px;
+    }
+}
+@media (max-width: 900px) {
+    .trading-img {
+        height: 180px;
+    }
+    .section-full-img {
+        height: 180px;
+    }
+}
+
+.faskens-logo {
+    height: 56px;
+    width: auto;
+    display: block;
+    margin-right: 18px;
+}
+
+.main-title {
+    font-weight: 900;
+    font-size: 2.6rem;
+    letter-spacing: 1.5px;
+    color: #0a2342;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    margin-bottom: 0.5em;
+}
